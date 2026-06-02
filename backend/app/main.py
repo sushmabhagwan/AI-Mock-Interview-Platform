@@ -4,6 +4,7 @@ from app.database.database import Base, engine
 from app.models import User
 
 from app.api.auth import router as auth_router
+from app.api.interview import router as interview_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -13,6 +14,8 @@ app = FastAPI(
 )
 
 app.include_router(auth_router)
+
+app.include_router(interview_router)
 
 
 @app.get("/")
