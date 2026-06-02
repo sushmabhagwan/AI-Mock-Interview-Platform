@@ -6,6 +6,8 @@ from app.models import User
 from app.api.auth import router as auth_router
 from app.api.interview import router as interview_router
 
+from app.models import *
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
