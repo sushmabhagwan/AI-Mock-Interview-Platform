@@ -6,6 +6,7 @@ import GenerateInterview from "./pages/GenerateInterview";
 import InterviewHistory from "./pages/InterviewHistory";
 import InterviewDetails from "./pages/InterviewDetails";
 import ProtectedRoute from "./components/ProtectedRoute";
+import InterviewSession from "./pages/InterviewSession";
 import Results from "./pages/Results";
 
 function App() {
@@ -52,6 +53,15 @@ function App() {
   element={
     <ProtectedRoute>
       <InterviewDetails />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/interview-session"
+  element={
+    <ProtectedRoute>
+      <InterviewSession />
     </ProtectedRoute>
   }
 />

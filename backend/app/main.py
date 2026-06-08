@@ -5,6 +5,7 @@ from app.models import User
 
 from app.api.auth import router as auth_router
 from app.api.interview import router as interview_router
+from app.routes.dashboard import router as dashboard_router
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.models import *
@@ -28,6 +29,7 @@ app.add_middleware(
 app.include_router(auth_router)
 
 app.include_router(interview_router)
+app.include_router(dashboard_router)
 
 
 @app.get("/")

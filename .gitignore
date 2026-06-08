@@ -1,17 +1,48 @@
+# ======================
 # Python
+# ======================
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 
-# Virtual Environment
+# Virtual Environments
 venv/
+.venv/
+env/
 
 # Environment Variables
 .env
 
+# ======================
+# React / Vite
+# ======================
+frontend/node_modules/
+node_modules/
+
+# Build files
+dist/
+build/
+
+# ======================
 # VS Code
+# ======================
 .vscode/
 
+# ======================
 # OS Files
+# ======================
 .DS_Store
 Thumbs.db
+
+# ======================
+# Logs
+# ======================
+*.log
+
+# ======================
+# Database
+# ======================
+*.db
+*.sqlite
+*.sqlite3

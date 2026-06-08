@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import api from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 function GenerateInterview() {
 
@@ -11,6 +12,7 @@ function GenerateInterview() {
   const [questions, setQuestions] = useState([]);
 
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleGenerate = async (e) => {
 
@@ -31,11 +33,26 @@ function GenerateInterview() {
   }
 );
 
+console.log(response.data);
+
+// Save interview session
+localStorage.setItem(
+  "currentInterview",
+  JSON.stringify(response.data)
+);
 console.log("API RESPONSE:", response.data);
 
 setQuestions(
   response.data.questions || []
 );
+
+localStorage.setItem(
+  "currentInterview",
+  JSON.stringify(response.data)
+);
+
+navigate("/interview-session");
+
 
     } catch (error) {
 
@@ -144,6 +161,8 @@ setQuestions(
       </div>
     </>
   );
+  
 }
 
 export default GenerateInterview;
+
