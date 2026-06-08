@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL:
-"https://ai-mock-interview-platform.onrender.com"
+    baseURL:"https://ai-mock-interview-platform-7b9k.onrender.com"
+
 });
 
 
